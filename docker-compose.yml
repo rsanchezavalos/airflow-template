@@ -13,7 +13,7 @@ services:
         volumes:
             - ./data/postgres:/var/lib/postgresql/data:z
         networks:
-            - job_vacancies_net
+            - pipeline_net
     webserver:
         build: .
         restart: always
@@ -29,9 +29,9 @@ services:
         volumes:
             # - ./plugins:/usr/local/airflow/plugins
             - ./dags:/usr/local/airflow/dags
-            - job_vacancies_store:/usr/local/airflow/data/
+            - pipeline_store:/usr/local/airflow/data/
         networks:
-            - job_vacancies_net
+            - pipeline_net
         ports:
             - "8080:8080"
         command: webserver

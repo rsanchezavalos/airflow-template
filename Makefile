@@ -18,12 +18,12 @@ help:   ##@Heelp me
 ##         Job commands               ##
 ########################################
 
-volume:
+volume:##@project Create volume
 	@docker network create ${PROJECT_NAME}_net
 	@docker volume create --name ${PROJECT_NAME}_store --opt type=none --opt o=bind --opt device=$(CURDIR)/data;
 	@touch .data_built
 
-build:  ##@project Create volume and build project
+build:  ##@project build project
 	@docker-compose --project-name ${PROJECT_NAME} up --force-recreate --build
 
 up:    ##@project Start project
