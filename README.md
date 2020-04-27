@@ -1,1 +1,1 @@
-# airflow-template
+# pipeline template
