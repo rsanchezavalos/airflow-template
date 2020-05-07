@@ -8,24 +8,32 @@
 
 ## Installation
 
+Create volumes and project networks
+
 ```
 $ make volume
 ```
+Build docker compose
 ```
 $ make build
 ```
+Run project
 ```
 $ make up
+# Airflow: localhost:8080
 ```
+
+Interactive session - inside docker container
 ```
 $ make exec
 ```
+Stop containers
 ```
 $ make down
 ```
 
-
 ## Configuration
-
+airflow config: dags/config/airflow.cfg 
 
 ### Python packages
+For custom python packages define them in: dags/config/requirements-pip.txt
